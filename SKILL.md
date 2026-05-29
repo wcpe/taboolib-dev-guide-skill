@@ -67,6 +67,8 @@ This skill follows the architecture standards defined in `taboolib-bukkit-plugin
 
 **Critical Rule**: If user's project code conflicts with this skill's examples, **user's project wins**. Adapt to their conventions.
 
+**nmsProxy tested versions**: 1.8.8, 1.12.2, 1.16.5, 1.17.1, 1.19.4, 1.20.4, 1.20.5+, 1.21+
+
 ## Evidence Policy
 
 Follow strict evidence hierarchy:
@@ -134,6 +136,8 @@ When user mentions these keywords, load corresponding cards and recipes:
 | message, i18n, 多语言, Lang | `09_message_i18n.md` | - |
 | menu, GUI, chest, 箱子菜单, 界面, virtualize | `11_chest_menu.md` | - |
 | 项目搭建, Gradle, 依赖 | `01_project_setup.md` | - |
+| nmsProxy, NMS, 跨版本, ASM转译, NMS代理 | `12_nms_proxy.md` | `create_nms_proxy.md` |
+| Incision, 字节码织入, bytecode, @Surgeon, @Lead, @Trail, @Splice, ASM Weaving | `13_incision.md` | `create_incision_advice.md` |
 
 **Multi-keyword tasks**: Load all relevant cards, prioritize by task type (setup → lifecycle → implementation → troubleshooting).
 
@@ -432,6 +436,12 @@ taboolib.common.platform.function - submit, submitAsync
 taboolib.module.configuration     - @Config, Configuration
 taboolib.module.lang              - sendLang, asLangText
 taboolib.expansion.ioc.annotation - @Component, @Resource, @PostConstruct
+taboolib.module.nms                 - nmsProxy, nmsProxyClass, Packet, PacketImpl, PacketSendEvent, MinecraftVersion
+taboolib.module.nms.remap           - require (bytecode-level class check)
+taboolib.module.incision            - IncisionBootstrap entry point
+taboolib.module.incision.annotation - @Surgeon, @Lead, @Trail, @Splice, @Bypass, @Graft, @Trim, @Excise, @Operation, @Version, @KotlinTarget
+taboolib.module.incision.api        - Theatre, Resume, Suture, Anchor, Shift, Anatomy, IncisionAccessor
+taboolib.module.incision.dsl        - Scalpel, ScopedHandle, SutureImpl
 ```
 
 ### Lifecycle Order

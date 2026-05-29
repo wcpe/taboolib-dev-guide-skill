@@ -17,6 +17,8 @@
 - **[08_database.md](08_database.md)** - EasyQuery integration, entity, repository (→ persistence skill)
 - **[09_message_i18n.md](09_message_i18n.md)** - Lang system, placeholder, multi-language
 - **[11_chest_menu.md](11_chest_menu.md)** - Chest menu, virtualize(), XMaterial, click exploit prevention
+- **[12_nms_proxy.md](12_nms_proxy.md)** - nmsProxy cross-version NMS, ASM translation, Packet
+- **[13_incision.md](13_incision.md)** - Bytecode weaving, @Surgeon, @Lead, @Trail, @Splice
 
 ### Troubleshooting
 - **[10_troubleshooting.md](10_troubleshooting.md)** - Common errors, diagnostic steps, solutions
@@ -56,3 +58,17 @@ These placeholders are resolved from the user's project `AGENTS.md` / `CLAUDE.md
 - For architecture enforcement → `$taboolib-bukkit-plugin-architecture-standards`
 - For database persistence → `$taboolib-corelib-easyquery-persistence-standards`
 - For CoreBridge packets → `$taboolib-corebridge-packet-standards`
+
+## 12. NMS 代理系统 (nmsProxy)
+- **文件**: `12_nms_proxy.md`
+- **模块**: `module/bukkit-nms`
+- **核心 API**: `nmsProxy<T>()`, `nmsProxyClass<T>()`, `unsafeLazy`, `MinecraftVersion`, `require()`
+- **适用场景**: 跨版本 NMS 操作, 封装版本差异, 访问 Bukkit API 未暴露的底层功能
+- **相关食谱**: `create_nms_proxy.md`
+
+## 13. Incision 字节码织入
+- **文件**: `13_incision.md`
+- **模块**: `module/incision`
+- **核心 API**: `@Surgeon`, `@Lead`, `@Trail`, `@Splice`, `@Bypass`, `@Excise`, `Scalpel`, `Theatre`, `Suture`
+- **适用场景**: 运行时字节码织入, NMS 方法拦截, 方法入口/出口探针, 临时 patch, 私有字段/方法访问
+- **相关食谱**: `create_incision_advice.md`

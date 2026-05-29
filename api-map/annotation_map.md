@@ -97,6 +97,33 @@
 
 ---
 
+## Incision Annotations (module/incision)
+
+| Annotation | Package | Parameters | Usage |
+|------------|---------|------------|-------|
+| `@Surgeon` | `taboolib.module.incision.annotation` | `priority: Int = 0` | Mark advice holder object |
+| `@Lead` | `taboolib.module.incision.annotation` | `scope: String`, `pattern: InsnPattern`, `where: String` | Method entry advice, executes before original body |
+| `@Trail` | `taboolib.module.incision.annotation` | `scope: String`, `onThrow: Boolean = true`, `pattern: InsnPattern`, `where: String` | Method exit advice, executes after original body |
+| `@Splice` | `taboolib.module.incision.annotation` | `scope: String`, `pattern: InsnPattern`, `where: String` | Surround advice, must explicitly call proceed() or override return |
+| `@Bypass` | `taboolib.module.incision.annotation` | `method: String`, `site: Site`, `pattern: InsnPattern`, `where: String` | Call site replacement |
+| `@Graft` | `taboolib.module.incision.annotation` | `method: String`, `site: Site`, `pattern: InsnPattern`, `where: String` | Append/prepend around anchor point |
+| `@Trim` | `taboolib.module.incision.annotation` | `method: String`, `kind: Kind`, `index: Int = 0`, `site: Site`, `pattern: InsnPattern`, `where: String` | Return value rewriting (ARG/RETURN/VAR) |
+| `@Excise` | `taboolib.module.incision.annotation` | `scope: String`, `pattern: InsnPattern`, `where: String` | Replace entire method body |
+| `@Operation` | `taboolib.module.incision.annotation` | `id: String = ""`, `priority: Int = 0`, `enabled: Boolean = true` | Advice metadata |
+| `@Version` | `taboolib.module.incision.annotation` | `start: String = ""`, `end: String = ""`, `matcher: String = ""` | Version gate |
+| `@KotlinTarget` | `taboolib.module.incision.annotation` | `companionInstance: Boolean = false`, `jvmStaticBridge: Boolean = false` | Cover both companion and @JvmStatic paths for Kotlin targets |
+| `@Site` | `taboolib.module.incision.annotation` | `anchor: Anchor`, `target: String = ""`, `shift: Shift = Shift.BEFORE`, `ordinal: Int = -1`, `offset: Int = 0` | Anchor specification |
+| `@SurgeryDesk` | `taboolib.module.incision.annotation` | `priority: Int = 0` | Mark DSL patch holder object |
+| `@InsnPattern` | `taboolib.module.incision.annotation` | `steps: Array<Step> = []` | Bytecode instruction pattern matching |
+| `@Step` | `taboolib.module.incision.annotation` | `opcode: Op`, `owner: String`, `name: String`, `desc: String`, `cst: String`, `repeat: Int = 1` | Step for pattern-based advice |
+| `@Scope` | `taboolib.module.incision.annotation` | (scope specification) | Scope specification for advice matching |
+
+**Verification**: `grep -r "@Surgeon" src/` to find existing incisions.
+
+**⚠️ CRITICAL**: Incision requires `module-incision` module and `-javaagent` or JVMTI agent for weaving.
+
+---
+
 ## Version-Specific Notes
 
 **TabooLib 6.2.0+**:
