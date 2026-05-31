@@ -138,6 +138,7 @@ When user mentions these keywords, load corresponding cards and recipes:
 | 项目搭建, Gradle, 依赖 | `01_project_setup.md` | - |
 | nmsProxy, NMS, 跨版本, ASM转译, NMS代理 | `12_nms_proxy.md` | `create_nms_proxy.md` |
 | Incision, 字节码织入, bytecode, @Surgeon, @Lead, @Trail, @Splice, ASM Weaving | `13_incision.md` | `create_incision_advice.md` |
+| test, 测试, 单元测试, 集成测试, junit, mock, IocTestContext, TabooLibIocTest, IocAutowired, submitAsync, 调度器测试, PlatformExecutor, PlatformIO, 日志测试, @Config测试, 命令测试, 监听器测试, @SubscribeEvent, MockBukkit, 数据工厂 | `14_testing.md` | `setup_testing.md` |
 
 **Multi-keyword tasks**: Load all relevant cards, prioritize by task type (setup → lifecycle → implementation → troubleshooting).
 

@@ -20,6 +20,9 @@
 - **[12_nms_proxy.md](12_nms_proxy.md)** - nmsProxy cross-version NMS, ASM translation, Packet
 - **[13_incision.md](13_incision.md)** - Bytecode weaving, @Surgeon, @Lead, @Trail, @Splice
 
+### Testing
+- **[14_testing.md](14_testing.md)** - 单元测试/集成测试层级、IocTestContext、@TabooLibIocTest、MockBukkit
+
 ### Troubleshooting
 - **[10_troubleshooting.md](10_troubleshooting.md)** - Common errors, diagnostic steps, solutions
 
@@ -52,6 +55,12 @@ All cards are based on TabooLib source code analysis (2026-04-26):
 These placeholders are resolved from the user's project `AGENTS.md` / `CLAUDE.md` (see SKILL.md → Evidence Policy → Local Path Detection). When the user has not declared a path, skip these layers and rely on the cards directly.
 
 **Critical**: Always verify APIs against user's actual TabooLib version before using.
+
+## 14. 单元测试与集成测试
+- **文件**: `14_testing.md`
+- **核心 API**: `IocTestContext`, `@TabooLibIocTest`, `@IocAutowired`, `TabooLibIocTestContext`, `MockBukkit`
+- **适用场景**: 功能开发完成后的自动化测试, IOC 注入测试, 生命周期回调测试, AOP 切面测试, 数据库测试
+- **相关食谱**: `setup_testing.md`
 
 ## Cross-References
 
