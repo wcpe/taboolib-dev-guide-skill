@@ -410,6 +410,21 @@ config.reload()  // ← Configuration.reload()
 Bukkit.getPlayer(uuid)  // ← Standard Bukkit API
 ```
 
+### 8. 日志内容手动拼接插件前缀
+❌ **WRONG**: 在日志消息中手动添加插件前缀
+```kotlin
+info("[MyPlugin] 配置加载完成！")
+warning("[MyPlugin] 玩家数据加载失败: $playerName")
+```
+
+✅ **CORRECT**: 直接写消息内容，前缀由 TabooLib 自动添加
+```kotlin
+// TabooLib 的 info / warning / severe 等函数会自动附带插件前缀
+// 输出示例: [MyPlugin] 配置加载完成！
+info("配置加载完成！")
+warning("玩家数据加载失败: $playerName")
+```
+
 ## Integration with Other Skills
 
 When task involves these areas, continue with specialized skills:
@@ -433,7 +448,7 @@ When task involves these areas, continue with specialized skills:
 taboolib.common.platform          - @Awake, LifeCycle
 taboolib.common.platform.command  - @CommandHeader, @CommandBody
 taboolib.common.platform.event    - @SubscribeEvent
-taboolib.common.platform.function - submit, submitAsync
+taboolib.common.platform.function - submit, submitAsync, info, warning, severe
 taboolib.module.configuration     - @Config, Configuration
 taboolib.module.lang              - sendLang, asLangText
 taboolib.expansion.ioc.annotation - @Component, @Resource, @PostConstruct
